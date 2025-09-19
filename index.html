@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Avo-to-do</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    
+
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#704012] to-[#9a7959] text-white p-6">
+
+    <main class="w-full max-w-3xl bg-black/30 backdrop-blur-md rounded-2xl shadow-xl p-6">
+        <header class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-xl flex items-center justify-center font-extrabold font-['Space_Grotesk'] text-2xl bg-gradient-to-tr from-[#4a7337] to-[#6b8c21] shadow-lg">🥑</div>
+            <div>
+                <h1 class="text-xl font-bold text-[#6b8c21]">Avo-to-do!</h1>
+                <p class="text-sm text-[#ddd48f]">A place to keep your to-do list ✨</p>
+            </div>
+        </header>
+
+        <section class="mt-5 flex flex-wrap gap-3 flex-col md:flex-row" aria-label="Add todo">
+            <input id="taskInput" class="flex-1 min-w-[150px] rounded-xl bg-white/10 border border-white/10 px-3 py-2 text-sm text-[#ddd48f] placeholder-[#cda989] focus:outline-none focus:ring-2 focus:ring-[#ddd48f]" placeholder="Type your to-do here..." aria-label="To-do text">
+            <input id="deadlineInput" class="flex-1 min-w-[150px] rounded-xl bg-white/10 border border-white/10 px-3 py-2 text-sm text-[#ddd48f] focus:outline-none focus:ring-2 focus:ring-[#ddd48f]" type="datetime-local" aria-label="Deadline">
+            <button id="addBtn" class="rounded-xl bg-[#6b8c21] border border-white/10 px-4 py-2 text-[#ddd48f] text-sm hover:bg-[#ddd48f] hover:text-[#6b8c21] transition">+ Add to-do</button>
+            <button id="clearBtn" class="rounded-xl bg-[#FF746C] border border-white/10 px-4 py-2 text-white text-sm hover:bg-white hover:text-[#FF746C] transition">Clear expired</button>
+        </section>
+
+        <section class="mt-5 flex flex-wrap gap-3 items-center justify-end" aria-label="Filter">
+            <label for="filterDate" class="text-sm text-[#ddd48f]">Filter by date :</label>
+            <input id="filterDate" type="date" 
+                class="rounded-xl bg-white/10 border border-white/10 px-3 py-2 text-sm text-[#ddd48f] focus:outline-none focus:ring-2 focus:ring-[#ddd48f]">
+            <button id="resetFilter" 
+                    class="rounded-xl bg-[#4a7337] border border-white/10 px-3 py-2 text-sm text-white hover:bg-[#ddd48f] hover:text-[#4a7337] transition">
+                Reset
+            </button>
+        </section>
+
+        <section id="list" class="mt-5 space-y-3 max-h-[420px] overflow-y-auto pr-2">
+
+        </section>
+
+        <footer>
+            <div class="mt-4 text-[#ddd48f] text-sm">Tip : press <strong>Enter</strong> to add. Deadlines show local time.</div>
+        </footer>
+    </main>
+
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
